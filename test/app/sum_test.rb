@@ -28,9 +28,18 @@ describe Sum do
   end
 
   it 'inc counter for fourth case' do
-    #this is obviously, wrong.  validating this position changes each time
     3.times {s.inc}
-    assert_equal '1+2+3+4+5+6+7+8+9', s.to_s
+    assert_equal '1+2+3+4+5+6+7-8+9', s.to_s
+  end
+
+  it 'inc counter for 5 case' do
+    4.times {s.inc}
+    assert_equal '1+2+3+4+5+6+7-8-9', s.to_s
+  end
+
+  it 'inc counter for 6 case' do
+    5.times {s.inc}
+    assert_equal '1+2+3+4+5+6+7-89', s.to_s
   end
 
 

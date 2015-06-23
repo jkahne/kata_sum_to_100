@@ -26,7 +26,9 @@ class Sum
     str << @numbers[5]
     str << @operators[0]
     str << @numbers[6]
-    str << @operators[0]
+    # should inc once for every time line 33 goes through all operations
+    # should increment when counter is 3, 6, 9, etc
+    str << @operators[ @cx / @operators.length ] 
     str << @numbers[7]
     str << @operators[ @cx % @operators.length ] # first to increment. this position will change every time inc is called.   go to next char in @operators
     str << @numbers[8]
