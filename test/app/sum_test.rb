@@ -66,9 +66,18 @@ describe Sum do
   it 'evals for solutions for equality' do
     solutions =  sum.eval_for(100)
     solutions.each do |sol|
-      ap sol
       assert_equal 100, eval(sol)
     end
+  end
+
+
+  #just playing around
+  it 'can handle other operations' do
+    sum_with_mult = Sum.new( %w[1 2 3 4 5 6 7 8 9], ['*', '+', '-', '' ])
+    sum_w_m =   sum_with_mult.eval_for(100)
+    sum_solutions =  sum.eval_for(100)
+    #every solution for ['+', '-', '' ] should be in the one with '*'
+    assert_equal sum_solutions.count, (sum_solutions & sum_w_m).count
   end
 
 
