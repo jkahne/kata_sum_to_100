@@ -13,27 +13,28 @@ class Sum
 
   def to_s
     str = ''
+
     str << @numbers[0]
     # inc every 3*3*3*3*3*3*3
-    str << @operators[0]
+    str << @operators[idx(7)]
     str << @numbers[1]
     # inc every 3*3*3*3*3*3
-    str << @operators[0]
+    str << @operators[idx(6)]
     str << @numbers[2]
     # inc every 3*3*3*3*3
-    str << @operators[0]
+    str << @operators[idx(5)]
     str << @numbers[3]
     # inc every 3*3*3*3
-    str << @operators[0]
+    str << @operators[idx(4)]
     str << @numbers[4]
     # inc every 3*3*3
-    str << @operators[(@cx/(@operators.length*@operators.length*@operators.length)) % @operators.length]
+    str << @operators[idx(3)]
 
     str << @numbers[5]
     # should inc once every time the final position goes through all operations 
     # times the next-to-final operation going through all operations
     # for operations ['+', '-', ''], that's 3*3
-    str << @operators[(@cx/(@operators.length*@operators.length)) % @operators.length]
+    str << @operators[idx(2)]
     str << @numbers[6]
     # should inc once for every time the final operation goes through all operations
     # should increment when counter is 3, 6, 9, etc
@@ -47,6 +48,10 @@ class Sum
     str << @operators[ @cx % @operators.length ] 
     str << @numbers[8]
     str
+  end
+
+  def idx(factor = 0)
+    (@cx/(@operators.length**factor)) % @operators.length
   end
 
   def inc
