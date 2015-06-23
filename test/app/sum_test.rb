@@ -63,5 +63,13 @@ describe Sum do
   end
 
 
+  it 'evals for solutions for equality' do
+    solutions =  sum.eval_for(100)
+    solutions.each do |sol|
+      ap sol
+      assert_equal 100, eval(sol)
+    end
+  end
+
 
 end

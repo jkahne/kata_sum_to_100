@@ -31,4 +31,17 @@ class Sum
     @cx += 1
   end
 
+  def how_many_times
+    @operators.length**(@numbers.length-1)
+  end
+
+  def eval_for(answer)
+    ar = []
+    how_many_times.times do
+      ar << to_s if ev == answer
+      inc
+    end
+    ar
+  end
+
 end
