@@ -1,2 +1,22 @@
 Give all combinations of the numbers 1 through 9 combined together with +, -, or empty string that adds up to 100
 
+My approach was to build an array of numbers and an array of operators, zip them together as a string, and then evaluate it.  
+
+The numbers would stay the same for the duration of the program. The tricky part was how to correctly change the operators. I decided to approach it much like counting so that the right most position, the 'ones' position if you will, increments each time.  Only when the ones position has gone through all available operators, set it back to the first operator and increment the 'tens' operator.  
+
+Using operators ['+', '-', '']:
+
+1) '1+2+3+4+5+6+7+8+9'
+2) '1+2+3+4+5+6+7+8-9'
+3) '1+2+3+4+5+6+7+89'
+4) '1+2+3+4+5+6+7-8+9'
+5) '1+2+3+4+5+6+7-8-9'
+6) '1+2+3+4+5+6+7-89'
+7) '1+2+3+4+5+6+78+9'
+8) '1+2+3+4+5+6+78-9'
+9) '1+2+3+4+5+6+789'
+and so on.
+
+This turned out to be a fairly simple algorithm once the math is in place.  Walking through the exercise, it makes sense.  Looking at the solution without that context makes it seem complicated.  I suggest you check this project out and walk through the commits, looking at the comments in the code.  I've tried to explain my reasoning along the way.  
+
+
