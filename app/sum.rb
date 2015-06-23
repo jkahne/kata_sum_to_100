@@ -31,7 +31,10 @@ class Sum
     str << @numbers[6]
     # should inc once for every time the final operation goes through all operations
     # should increment when counter is 3, 6, 9, etc
-    str << @operators[ @cx / @operators.length ] 
+    #
+    # this blows up once cx is 9.  need to cap it at @operators.length
+    # need to cap others as well. 
+    str << @operators[ (@cx / @operators.length) % @operators.length ] 
     str << @numbers[7]
     # first to increment. this position will change every time inc is called.   
     # go to next char in @operators
