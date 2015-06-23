@@ -13,23 +13,13 @@ class Sum
 
   def to_s
     str = ''
-    str << @numbers[0]
-    str << @operators[idx(7)]
-    str << @numbers[1]
-    str << @operators[idx(6)]
-    str << @numbers[2]
-    str << @operators[idx(5)]
-    str << @numbers[3]
-    str << @operators[idx(4)]
-    str << @numbers[4]
-    str << @operators[idx(3)]
-    str << @numbers[5]
-    str << @operators[idx(2)]
-    str << @numbers[6]
-    str << @operators[idx(1)]
-    str << @numbers[7]
-    str << @operators[idx(0)]
-    str << @numbers[8]
+
+    (@numbers.length-1).times do |position|
+      str << @numbers[position]
+      str << @operators[idx(@numbers.length - position - 2)]
+    end
+    str << @numbers[@numbers.length-1]
+
     str
   end
 
