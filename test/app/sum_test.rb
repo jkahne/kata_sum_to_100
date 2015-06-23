@@ -17,6 +17,11 @@ describe Sum do
     assert_equal 45, s.ev
   end
 
+  it 'inc counter for second case' do
+    s.inc
+    assert_equal '1+2+3+4+5+6+7+8-9', s.to_s
+  end
+
 
 
 end

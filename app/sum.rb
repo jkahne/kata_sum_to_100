@@ -4,6 +4,7 @@ class Sum
   def initialize(numbers = %w[1 2 3 4 5 6 7 8 9], operators =  [ '+', '-',  ''] )
     @numbers = numbers
     @operators = operators
+    @cx = 0
   end
 
   def ev
@@ -27,8 +28,13 @@ class Sum
     str << @numbers[6]
     str << @operators[0]
     str << @numbers[7]
-    str << @operators[0]
+    str << @operators[ @cx % @operators.length ] # first to increment. this position will change every time inc is called.   go to next char in @operators
     str << @numbers[8]
     str
   end
+
+  def inc
+    @cx += 1
+  end
+
 end
