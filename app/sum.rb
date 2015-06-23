@@ -14,12 +14,16 @@ class Sum
   def to_s
     str = ''
     str << @numbers[0]
+    # inc every 3*3*3*3*3*3*3
     str << @operators[0]
     str << @numbers[1]
+    # inc every 3*3*3*3*3*3
     str << @operators[0]
     str << @numbers[2]
+    # inc every 3*3*3*3*3
     str << @operators[0]
     str << @numbers[3]
+    # inc every 3*3*3*3
     str << @operators[0]
     str << @numbers[4]
     # inc every 3*3*3
