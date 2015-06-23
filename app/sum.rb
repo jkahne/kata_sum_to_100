@@ -41,11 +41,11 @@ class Sum
     #
     # this blows up once cx is 9.  need to cap it at @operators.length
     # need to cap others as well. 
-    str << @operators[ (@cx / @operators.length) % @operators.length ] 
+    str << @operators[idx(1)]
     str << @numbers[7]
     # first to increment. this position will change every time inc is called.   
     # go to next char in @operators
-    str << @operators[ @cx % @operators.length ] 
+    str << @operators[idx(0)]
     str << @numbers[8]
     str
   end
