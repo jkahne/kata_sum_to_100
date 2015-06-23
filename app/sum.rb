@@ -24,13 +24,18 @@ class Sum
     str << @numbers[4]
     str << @operators[0]
     str << @numbers[5]
-    str << @operators[0]
+    # should inc once every time the final position goes through all operations 
+    # times the next-to-final operation going through all operations
+    # for operations ['+', '-', ''], that's 3*3
+    str << @operators[@cx/(@operators.length*@operators.length)]
     str << @numbers[6]
-    # should inc once for every time line 33 goes through all operations
+    # should inc once for every time the final operation goes through all operations
     # should increment when counter is 3, 6, 9, etc
     str << @operators[ @cx / @operators.length ] 
     str << @numbers[7]
-    str << @operators[ @cx % @operators.length ] # first to increment. this position will change every time inc is called.   go to next char in @operators
+    # first to increment. this position will change every time inc is called.   
+    # go to next char in @operators
+    str << @operators[ @cx % @operators.length ] 
     str << @numbers[8]
     str
   end

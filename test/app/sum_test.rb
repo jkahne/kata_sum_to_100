@@ -42,6 +42,11 @@ describe Sum do
     assert_equal '1+2+3+4+5+6+7-89', s.to_s
   end
 
+  it 'inc counter for 7 case' do
+    6.times {s.inc}
+    assert_equal '1+2+3+4+5+6+78+9', s.to_s
+  end
+
 
 
 end
