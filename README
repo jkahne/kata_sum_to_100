@@ -1,4 +1,6 @@
-Give all combinations of the numbers 1 through 9 combined together with +, -, or empty string that adds up to 100
+Insert the operations 1) addition ('+'), 2) subtraction ('-'), and 3) empty string ('') between the digits 1, 2, 3, 4, 5, 6, 7, 8, 9 that make the expression equal 100. List all solutions. The digits must remain in the same sequence.
+
+-----
 
 My approach was to build an array of numbers and an array of operators, zip them together as a string, and then evaluate it.  
 
